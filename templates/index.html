@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>YOLO Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Detect People Holding Bottles or Cups</h2>
+        <form method="POST" enctype="multipart/form-data" onsubmit="showSpinner()">
+            <input type="file" name="file" required>
+            <button type="submit">Analyze</button>
+        </form>
+
+        <div class="spinner" id="spinner">
+            <div class="spinner-border"></div>
+            <p>Processing... please wait</p>
+        </div>
+
+        {% if result_file %}
+        <div class="result-section">
+            <h3>Result:</h3>
+
+            {% if result_file.endswith('.mp4') %}
+                <video id="resultVideo" width="500" controls muted autoplay>
+                    <source src="{{ url_for('results', filename=result_file) }}?v={{ random() }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <!-- Download buttons -->
+                <div class="buttons">
+                    <a href="{{ url_for('results', filename=result_file) }}" download>
+                        <button>Download Video</button>
+                    </a>
+                    <a href="{{ url_for('results', filename=result_file.replace('.mp4', '_thumb.jpg')) }}" download>
+                        <button>Download First Frame</button>
+                    </a>
+                </div>
+            {% else %}
+                <img src="{{ url_for('results', filename=result_file) }}?v={{ random() }}" width="500" alt="Result Image">
+                <a href="{{ url_for('results', filename=result_file) }}" download>
+                    <button>Download Image</button>
+                </a>
+            {% endif %}
+
+            <ul>
+                {% for detection in detections %}
+                    <li>{{ detection }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
