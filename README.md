@@ -25,11 +25,9 @@ A Flask-based web application that uses [YOLOv8](https://github.com/ultralytics/
 
 ### 🎥 Video Result
 
-🔗 [Click to view annotated video](https://github.com/Geo-y20/yolov8-holding-detector/blob/main/video%20test.mp4)
+![Demo Video](https://github.com/Geo-y20/yolov8-holding-detector/blob/main/video%20test.gif?raw=true)
 
-> GitHub doesn't allow embedded video previews, but you can click the link above to download or view it.
 
----
 
 ### 🖼 Image Results
 
