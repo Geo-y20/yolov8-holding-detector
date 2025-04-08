@@ -1,0 +1,26 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+yolo-flask-env/
+env/
+.venv/
+venv/
+
+# Flask cache / temp files
+instance/
+*.db
+*.sqlite3
+
+# Logs and local settings
+*.log
+.env
+.DS_Store
+
+# VSCode
+.vscode/
+
+# System files
+Thumbs.db
