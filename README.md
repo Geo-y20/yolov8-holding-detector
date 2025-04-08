@@ -1,17 +1,15 @@
 
-## 📦 `yolov8-holding-detector`
+# 📦 yolov8-holding-detector
 
 A Flask-based web application that uses [YOLOv8](https://github.com/ultralytics/ultralytics) for real-time detection of people holding objects such as **bottles** or **cups** in images and videos.
 
-<p align="center">
-  <img src="https://img.shields.io/badge/YOLOv8-Ultralytics-brightgreen" />
-  <img src="https://img.shields.io/badge/Flask-Web%20App-blue" />
-  <img src="https://img.shields.io/badge/OpenCV-Detection-orange" />
-</p>
+![YOLOv8 Badge](https://img.shields.io/badge/YOLOv8-Ultralytics-brightgreen)
+![Flask Badge](https://img.shields.io/badge/Flask-Web%20App-blue)
+![OpenCV Badge](https://img.shields.io/badge/OpenCV-Detection-orange)
 
 ---
 
-### 🚀 Features
+## 🚀 Features
 
 - ✅ Upload and process **images or videos**
 - ✅ Detect **persons**, **bottles**, and **cups**
@@ -23,31 +21,43 @@ A Flask-based web application that uses [YOLOv8](https://github.com/ultralytics/
 
 ---
 
-### 📸 Example
+## 📸 Example
 
-#### Image Upload:
-<img src="https://via.placeholder.com/500x280.png?text=Annotated+Image" width="500" alt="Sample Output" />
+### 🎥 Video Result
 
-#### Video Upload:
-🎥 Annotated video preview in the browser with bounding boxes and labels.
+🔗 [Click to view annotated video](https://github.com/Geo-y20/yolov8-holding-detector/blob/main/video%20test.mp4)
+
+> GitHub doesn't allow embedded video previews, but you can click the link above to download or view it.
 
 ---
 
-### 🧠 Model Used
+### 🖼 Image Results
+
+**Sample 1**  
+![Sample 1](https://github.com/Geo-y20/yolov8-holding-detector/blob/main/sample1.png?raw=true)
+
+**Sample 2**  
+![Sample 2](https://github.com/Geo-y20/yolov8-holding-detector/blob/main/sample%202.png?raw=true)
+
+---
+
+## 🧠 Model Used
+
 - **YOLOv8s** from [Ultralytics](https://github.com/ultralytics/ultralytics)
 - Detects: `person`, `bottle`, `cup` *(extendable to other classes)*
 
-> ⚠️ The model file `yolov8s.pt` is not included in the repo. It will be downloaded automatically or must be placed manually in the project root.
+> ⚠️ The model file `yolov8s.pt` is **excluded** from this repository (see `.gitignore`).  
+> Download it manually or automatically during setup.
 
 ---
 
-### 🛠 Project Structure
+## 🛠 Project Structure
 
 ```
 yolov8-holding-detector/
 │
 ├── app.py                  # Main Flask application
-├── yolov8s.pt              # YOLOv8 model (excluded from repo)
+├── yolov8s.pt              # YOLOv8 model (not included in repo)
 ├── requirements.txt        # Python dependencies
 ├── README.md
 │
@@ -64,7 +74,7 @@ yolov8-holding-detector/
 
 ---
 
-### 🧪 Getting Started
+## 🧪 Getting Started
 
 ```bash
 # 1. Create a virtual environment
@@ -86,7 +96,7 @@ http://127.0.0.1:5000
 
 ---
 
-### 📥 Requirements
+## 📥 Requirements
 
 Install dependencies via:
 
@@ -94,8 +104,9 @@ Install dependencies via:
 pip install -r requirements.txt
 ```
 
-Basic contents of `requirements.txt`:
-```txt
+Example `requirements.txt`:
+
+```
 flask
 opencv-python
 ultralytics
@@ -103,11 +114,11 @@ ultralytics
 
 ---
 
-### 💡 Future Ideas
+## 💡 Future Ideas
 
-- Add multiple object categories
-- Upload multiple files at once
+- Add more object categories
+- Batch processing (multi-file upload)
 - Deploy to Hugging Face Spaces or Render
-- Add login/authentication (for users/admins)
+- Add user login/auth (for multi-user access)
 
 ---
